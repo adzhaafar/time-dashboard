@@ -1,0 +1,36 @@
+/* remove default browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* background color */
+body {
+  background-color: hsl(226, 43%, 10%);
+}
+
+.grid-container {
+  display: grid;
+  /* align content not supported, align items does something else, 
+  vertically centered */
+  padding-top: 150px;
+  /* horizontally centered */
+  justify-content: center;
+  /* 2 rows and 4 columns, 200px each item */
+  grid-template-rows: repeat(2, 200px);
+  grid-template-columns: repeat(4, 200px);
+  grid-gap: 20px;
+
+  /* height: 100%; */
+}
+
+/* color all grid-items */
+[class*="grid-item"] {
+  background-color: hsl(235, 46%, 20%);
+  border-radius: 10px;
+}
+
+.daily-weekly-monthly {
+  grid-row: 1 / 3;
+}
