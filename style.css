@@ -14,12 +14,12 @@ body {
   display: grid;
   /* align content not supported, align items does something else, 
   vertically centered */
-  padding-top: 150px;
+  padding-top: 125px;
   /* horizontally centered */
   justify-content: center;
   /* 2 rows and 4 columns, 200px each item */
-  grid-template-rows: repeat(2, 200px);
-  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 220px);
+  grid-template-columns: repeat(4, 220px);
   grid-gap: 20px;
 
   /* height: 100%; */
@@ -34,3 +34,88 @@ body {
 .daily-weekly-monthly {
   grid-row: 1 / 3;
 }
+
+.picture-name {
+  grid-area: 1 / 1 / 2 / 1;
+  height: 320px;
+  background-color: hsl(235, 45%, 61%);
+}
+
+.daily-weekly-monthly {
+  grid-area: 1 / 1 / 3 / 1;
+  background-color: hsl(235, 46%, 20%);
+}
+/* row start / column start / row end / column end */
+
+.background-1 {
+  grid-area: 1 / 2 / 1 / 2;
+  background-color: hsl(15, 100%, 70%);
+}
+
+.work {
+  grid-area: 1 / 2 / 1 / 2;
+  background-color: hsl(235, 46%, 20%);
+  height: 150px;
+}
+
+.background-2 {
+  grid-area: 1 / 3 / 1 / 3;
+  background: hsl(348, 100%, 68%);
+}
+
+.study {
+  grid-area: 1 / 3 / 1 / 3;
+  background-color: hsl(235, 46%, 20%);
+  height: 150px;
+}
+
+.background-3 {
+  grid-area: 1 / 4 / 1 / 4;
+  background-color: hsl(195, 74%, 62%);
+}
+
+.play {
+  grid-area: 1 / 4 / 1 / 4;
+  background-color: hsl(235, 46%, 20%);
+  height: 150px;
+}
+
+.background-4 {
+  grid-area: 2 / 2 / 2 / 2;
+  background-color: hsl(145, 58%, 55%);
+}
+
+.exercise {
+  grid-area: 2 / 2 / 2 / 2;
+  background-color: hsl(235, 46%, 20%);
+  height: 150px;
+}
+
+.background-5 {
+  grid-area: 2 / 3 / 2 / 3;
+  background-color: hsl(264, 64%, 52%);
+}
+
+.social {
+  grid-area: 2 / 3 / 2 / 3;
+  background-color: hsl(235, 46%, 20%);
+  height: 150px;
+}
+
+.background-6 {
+  grid-area: 2 / 4 / 2 / 4;
+  background-color: hsl(43, 84%, 65%);
+}
+
+.self-care {
+  grid-area: 2 / 4 / 2 / 4;
+  background-color: hsl(235, 46%, 20%);
+  height: 150px;
+}
+
+/* - Light red (work): hsl(15, 100%, 70%)
+- Soft blue (play): hsl(195, 74%, 62%)
+- Light red (study): hsl(348, 100%, 68%)
+- Lime green (exercise): hsl(145, 58%, 55%)
+- Violet (social): hsl(264, 64%, 52%)
+- Soft orange (self care): hsl(43, 84%, 65%) */
