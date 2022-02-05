@@ -10,12 +10,10 @@ body {
   background-color: hsl(226, 43%, 10%);
 }
 
+/* basic grid layout */
 .grid-container {
   display: grid;
-  /* align content not supported, align items does something else, 
-  vertically centered */
   padding-top: 125px;
-  /* horizontally centered */
   justify-content: center;
   /* 2 rows and 4 columns, 200px each item */
   grid-template-rows: repeat(2, 220px);
@@ -23,27 +21,23 @@ body {
   grid-gap: 20px;
 }
 
-/* color all grid-items */
+/* round off all grid items */
 [class*="grid-item"] {
-  background-color: hsl(235, 46%, 20%);
   border-radius: 10px;
 }
-
+/* entire first column item styling */
 .daily-weekly-monthly {
   grid-row: 1 / 3;
+  grid-area: 1 / 1 / 3 / 1;
+  background-color: hsl(235, 46%, 20%);
 }
 
+/* styling for other elements (picture-name to self-care) */
 .picture-name {
   grid-area: 1 / 1 / 2 / 1;
   height: 320px;
   background-color: hsl(235, 45%, 61%);
 }
-
-.daily-weekly-monthly {
-  grid-area: 1 / 1 / 3 / 1;
-  background-color: hsl(235, 46%, 20%);
-}
-/* row start / column start / row end / column end */
 
 .background-1 {
   grid-area: 1 / 2 / 1 / 2;
@@ -117,21 +111,25 @@ body {
   margin-top: 50px;
 }
 
+/* push svgs to the right */
 svg {
   margin-left: 135px;
 }
 
+/* all text styling */
 .text {
   font-family: "Rubik", sans-serif;
   color: white;
 }
 
+/* titles styling */
 .title {
   margin-top: 25px;
   margin-left: 25px;
   font-size: 18px;
 }
 
+/* current hours styling */
 .current {
   margin-left: 25px;
   margin-top: 20px;
@@ -139,6 +137,7 @@ svg {
   font-weight: 100;
 }
 
+/* last row styling */
 .last {
   margin-left: 25px;
   margin-top: 15px;
@@ -146,10 +145,12 @@ svg {
   opacity: 75%;
 }
 
+/* push text downwards */
 .dwm {
   margin-top: 340px;
 }
 
+/* style each of the three dots */
 .dot {
   height: 5px;
   width: 5px;
@@ -158,11 +159,14 @@ svg {
   display: inline-block;
 }
 
+/* push dots up and right */
 .three-dots {
   /* margin-top: 150px; */
   margin-left: 177px;
   margin-top: -130px;
 }
+
+/* styling for daily weekly monthly text */
 #daily,
 #weekly,
 #monthly {
@@ -175,6 +179,7 @@ svg {
   font-size: 15px;
 }
 
+/* styling for image */
 #image {
   width: 100px;
   margin-left: 60px;
@@ -183,6 +188,7 @@ svg {
   border-radius: 50%;
 }
 
+/* name of the guy */
 .name {
   font-family: "Rubic", sans-serif;
   color: white;
@@ -191,7 +197,29 @@ svg {
   margin-left: 25px;
 }
 
+/* report for styling */
 .report-for {
   font-size: 20px;
   margin: 15px 35px;
+}
+
+/* hovering over daily/weekly/monthly */
+#daily:hover,
+#weekly:hover,
+#monthly:hover {
+  opacity: 100%;
+  text-decoration: underline;
+}
+
+.title:hover {
+  text-decoration: underline;
+}
+
+.work:hover,
+.play:hover,
+.exercise:hover,
+.study:hover,
+.social:hover,
+.self-care:hover {
+  background-color: hsl(236, 40%, 47%);
 }
