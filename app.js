@@ -139,6 +139,11 @@ monthly.addEventListener('click', () => {
 })
 
 
+function main() { 
+  
+
+}
+
 
     // Json data
     let titles = `[
