@@ -1,4 +1,3 @@
-
 // Selectors 
 const daily = document.querySelector("#daily");
 const weekly = document.querySelector("#weekly")
@@ -8,140 +7,82 @@ const current = document.querySelectorAll(".current");
 const last = document.querySelectorAll(".last");
 
 
-function generate(i) {
-    return titles_dict[i].timeframes.daily.current;
-}
-
-function generate2(i) {
-    return titles_dict[i].timeframes.daily.previous;
-}
-
-function generate3(i) {
-    return titles_dict[i].timeframes.weekly.current;
-}
-
-function generate4(i) {
-    return titles_dict[i].timeframes.weekly.previous;
-}
-
-function generate5(i) {
-    return titles_dict[i].timeframes.monthly.current;
-}
-
-function generate6(i) {
-    return titles_dict[i].timeframes.monthly.previous;
-}
 
 // Event Listeners 
 daily.addEventListener('click', () => {
-    current.forEach((item) => {
-        if (item.parentElement.classList.contains("work")) {
-            item.textContent = `${generate(0)}hrs`;
-        } else if (item.parentElement.classList.contains("study")) {
-            item.textContent = `${generate(1)}hrs`;
-        } else if (item.parentElement.classList.contains("play")) {
-            item.textContent = `${generate(2)}hrs`;
-        } else if (item.parentElement.classList.contains("exercise")) {
-            item.textContent = `${generate(3)}hrs`;
-        } else if (item.parentElement.classList.contains("social")) {
-            item.textContent = `${generate(4)}hrs`;
-        } else if (item.parentElement.classList.contains("self-care")) {
-            item.textContent = `${generate(5)}hrs`;
-        }
-    });
-    last.forEach((item) => {
-        if (item.parentElement.classList.contains("work")) {
-            item.textContent = `Last day - ${generate2(0)} hrs`;
-        } else if (item.parentElement.classList.contains("study")) {
-            item.textContent = `Last day - ${generate2(1)} hrs`;
-        } else if (item.parentElement.classList.contains("play")) {
-            item.textContent = `Last day - ${generate2(2)} hrs`;
-        } else if (item.parentElement.classList.contains("exercise")) {
-            item.textContent = `Last day - ${generate2(3)} hrs`;
-        } else if (item.parentElement.classList.contains("social")) {
-            item.textContent = `Last day - ${generate2(4)} hrs`;
-        } else if (item.parentElement.classList.contains("self-care")) {
-            item.textContent = `Last day - ${generate2(5)} hrs`;
-        };
-    });
-
-})
-
-
+  helper('c', 'd', 'day');
+  helper('l', 'd', 'day');
+});
 
 weekly.addEventListener('click', () => {
-    current.forEach((item) => {
-        if (item.parentElement.classList.contains("work")) {
-            item.textContent = `${generate3(0)}hrs`;
-        } else if (item.parentElement.classList.contains("study")) {
-            item.textContent = `${generate3(1)}hrs`;
-        } else if (item.parentElement.classList.contains("play")) {
-            item.textContent = `${generate3(2)}hrs`;
-        } else if (item.parentElement.classList.contains("exercise")) {
-            item.textContent = `${generate3(3)}hrs`;
-        } else if (item.parentElement.classList.contains("social")) {
-            item.textContent = `${generate3(4)}hrs`;
-        } else if (item.parentElement.classList.contains("self-care")) {
-            item.textContent = `${generate3(5)}hrs`;
-        }
-    });
-    last.forEach((item) => {
-        if (item.parentElement.classList.contains("work")) {
-            item.textContent = `Last week - ${generate4(0)} hrs`;
-        } else if (item.parentElement.classList.contains("study")) {
-            item.textContent = `Last week - ${generate4(1)} hrs`;
-        } else if (item.parentElement.classList.contains("play")) {
-            item.textContent = `Last week - ${generate4(2)} hrs`;
-        } else if (item.parentElement.classList.contains("exercise")) {
-            item.textContent = `Last week - ${generate4(3)} hrs`;
-        } else if (item.parentElement.classList.contains("social")) {
-            item.textContent = `Last week - ${generate4(4)} hrs`;
-        } else if (item.parentElement.classList.contains("self-care")) {
-            item.textContent = `Last week - ${generate4(5)} hrs`;
-        };
-    });
-
-})
-
+  helper('c', 'w', 'week');
+  helper('l', 'w', 'week');
+});
 
 monthly.addEventListener('click', () => {
+  helper('c', 'm', 'month');
+  helper('l', 'm', 'month');
+});
+    
+
+
+// Functions
+
+
+// helper function
+function helper(c_or_l, d_w_m, word) {
+  if (c_or_l === "c") {      
     current.forEach((item) => {
-        if (item.parentElement.classList.contains("work")) {
-            item.textContent = `${generate5(0)}hrs`;
-        } else if (item.parentElement.classList.contains("study")) {
-            item.textContent = `${generate5(1)}hrs`;
-        } else if (item.parentElement.classList.contains("play")) {
-            item.textContent = `${generate5(2)}hrs`;
-        } else if (item.parentElement.classList.contains("exercise")) {
-            item.textContent = `${generate5(3)}hrs`;
-        } else if (item.parentElement.classList.contains("social")) {
-            item.textContent = `${generate5(4)}hrs`;
-        } else if (item.parentElement.classList.contains("self-care")) {
-            item.textContent = `${generate5(5)}hrs`;
-        }
+      if (item.parentElement.classList.contains("work")) {
+        item.textContent = `${generate(0, c_or_l, d_w_m)}hrs`;
+      } else if (item.parentElement.classList.contains("study")) {
+        item.textContent = `${generate(1, c_or_l, d_w_m)}hrs`;
+      } else if (item.parentElement.classList.contains("play")) {
+        item.textContent = `${generate(2, c_or_l, d_w_m)}hrs`;
+      } else if (item.parentElement.classList.contains("exercise")) {
+        item.textContent = `${generate(3, c_or_l, d_w_m)}hrs`;
+      } else if (item.parentElement.classList.contains("social")) {
+        item.textContent = `${generate(4, c_or_l, d_w_m)}hrs`;
+      } else if (item.parentElement.classList.contains("self-care")) {
+        item.textContent = `${generate(5, c_or_l, d_w_m)}hrs`
+      }
     });
-    last.forEach((item) => {
-        if (item.parentElement.classList.contains("work")) {
-            item.textContent = `Last month - ${generate6(0)} hrs`;
-        } else if (item.parentElement.classList.contains("study")) {
-            item.textContent = `Last month - ${generate6(1)} hrs`;
-        } else if (item.parentElement.classList.contains("play")) {
-            item.textContent = `Last month - ${generate6(2)} hrs`;
-        } else if (item.parentElement.classList.contains("exercise")) {
-            item.textContent = `Last month - ${generate6(3)} hrs`;
-        } else if (item.parentElement.classList.contains("social")) {
-            item.textContent = `Last month - ${generate6(4)} hrs`;
-        } else if (item.parentElement.classList.contains("self-care")) {
-            item.textContent = `Last month - ${generate6(5)} hrs`;
-        };
-    });
-
-})
-
-
-function main() { 
+  } 
   
+  else {
+    last.forEach((item) => {
+      if (item.parentElement.classList.contains("work")) {
+        item.textContent = `Last ${word} - ${generate(0, c_or_l, d_w_m)} hrs`;
+      } else if (item.parentElement.classList.contains("study")) {
+        item.textContent = `Last ${word} - ${generate(1, c_or_l, d_w_m)} hrs`;
+      } else if (item.parentElement.classList.contains("play")) {
+        item.textContent = `Last ${word} - ${generate(2, c_or_l, d_w_m)} hrs`;
+      } else if (item.parentElement.classList.contains("exercise")) {
+        item.textContent = `Last ${word} - ${generate(3, c_or_l, d_w_m)} hrs`;
+      } else if (item.parentElement.classList.contains("social")) {
+        item.textContent = `Last ${word} - ${generate(4, c_or_l, d_w_m)} hrs`;
+      } else if (item.parentElement.classList.contains("self-care")) {
+        item.textContent = `Last ${word} - ${generate(5, c_or_l, d_w_m)} hrs`;
+      };
+    });
+  }
+}  
 
+// Generate function
+function generate(i, c_or_l, d_w_m) {
+  if (c_or_l === "c" && d_w_m === "d") {
+    return titles_dict[i].timeframes.daily.current
+  } else if (c_or_l === "l" && d_w_m === "d") {
+    return titles_dict[i].timeframes.daily.previous;
+  } else if (c_or_l === "c" && d_w_m === "w") {
+    return titles_dict[i].timeframes.weekly.current;
+  } else if (c_or_l === "l" && d_w_m === "w") {
+    return titles_dict[i].timeframes.weekly.previous;
+  } else if (c_or_l === "c" && d_w_m === "m") {
+    return titles_dict[i].timeframes.monthly.current;
+  } else {
+    return titles_dict[i].timeframes.monthly.previous;
+  }
 }
 
 
@@ -251,6 +192,7 @@ function main() {
       }
     }
 ]`
-
+// turn json data string into object
     let titles_dict = JSON.parse(titles);
+
 
